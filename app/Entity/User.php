@@ -44,7 +44,7 @@ class User extends Authenticatable
 
     ];
 
-// это метод для тестов
+// это метод для тестов. Создание User
     public static function register(string $name, string $email, string $password): self
     {
     	return static::create([
@@ -57,7 +57,7 @@ class User extends Authenticatable
     	]); 
     }
 
-// это метод для тестов
+// это метод для тестов. Создание User от администратора.
     public static function new($name, $email): self
     {
     	return static::create([

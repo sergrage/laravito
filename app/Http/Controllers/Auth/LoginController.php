@@ -37,8 +37,10 @@ class LoginController extends Controller
             $this->fireLockoutEvent($request);
             $this->sendLockoutResponse($request);
         }
+        // http://laravel.su/docs/5.0/authentication - тут про attempt и intended
         // ищет пользователя по полям.
         $authenticate = Auth::attempt(
+            // извлекает из request только указанные поля
             $request->only(['email', 'password']),
             $request->filled('remember')
         );
